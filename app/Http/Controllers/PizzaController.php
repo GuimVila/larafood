@@ -7,7 +7,10 @@ use App\Models\Pizza;
 
 class PizzaController extends Controller
 {
-
+  // public function __construct() {
+  //   $this->middleware('auth'); 
+  // } it would apply them to ALL!!
+  
   public function index() {
 
     $pizzas = Pizza::latest()->get();      

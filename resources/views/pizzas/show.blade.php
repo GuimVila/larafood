@@ -19,3 +19,5 @@
 </div>
 <a href="/pizzas" class="back"><- Back to all pizzas</a>
 @endsection
+
+<!-- ", '$pizza->id') }}" -->
