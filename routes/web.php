@@ -15,22 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/pizzas', function () {
-    //getdata from db
-
-    $pizzas = [
-        ['type' => 'Bbq', 'base'=> 'classic'], 
-        ['type' => 'Supreme', 'base'=> 'cheesy crust'], 
-        ['type' => 'Cheese', 'base'=> 'thin']
-    ]; 
-
-    return view('pizzas', [
-        'pizzas' => $pizzas,
-        'name' => request('name'), 
-        'age' => request('age')
-    ]);
-});
-
+  });
+  
+  // pizza routes
+  Route::get('/pizzas', 'App\Http\Controllers\PizzaController@index');
+  Route::get('/pizzas/create', 'App\Http\Controllers\PizzaController@create');
+  Route::post('/pizzas', 'App\Http\Controllers\PizzaController@store');
+  Route::get('/pizzas/{id}', 'App\Http\Controllers\PizzaController@show');
+  Route::delete('/pizzas/{id}', 'App\Http\Controllers\pizzaController@destroy');
 
